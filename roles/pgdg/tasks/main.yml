@@ -1,7 +1,7 @@
 ---
 
 - name:             remove pg91 if installed
-  apt:              name={{ item }} state=absent
+  apt:              name={{ item }} state=absent purge=yes
   with_items:
     - postgresql-contrib-9.1
     - postgresql-server-dev-9.1
