@@ -1,6 +1,6 @@
 ---
 
-- name:             remove pg91 if installed
+- name:             remove old pg if installed
   apt:              name={{ item }} state=absent purge=yes
   with_items:
     - postgresql-contrib-9.1
@@ -9,6 +9,14 @@
     - postgresql-client-9.1
     - postgresql-client-common
     - postgresql-common
+    - postgresql-contrib-9.3
+    - postgresql-server-dev-9.3
+    - postgresql-9.3
+    - postgresql-client-9.3
+    - postgresql-contrib-9.4
+    - postgresql-server-dev-9.4
+    - postgresql-9.4
+    - postgresql-client-9.4
 
 - name:             get apt key for pgdg
   get_url:          url=https://www.postgresql.org/media/keys/ACCC4CF8.asc dest=/root/cache/ACCC4CF8.asc
